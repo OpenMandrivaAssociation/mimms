@@ -26,7 +26,7 @@ easy to use and, for the time being, remains a useful program.
 %package -n python-%{name}
 Summary:	MMS stream module for Python
 Group:		System/Libraries
-%py_requires
+%py_requires -d
 # used from pure python code, not linked against
 Requires:	%{_lib}mms0
 
