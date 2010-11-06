@@ -1,7 +1,7 @@
 
 %define name	mimms
 %define version	3.2.1
-%define rel	1
+%define rel	2
 
 Summary:	MMS stream downloader
 Name:		%{name}
