@@ -58,3 +58,14 @@ rm -rf %{buildroot}
 %doc AUTHORS
 %{python_sitelib}/lib%{name}
 %{python_sitelib}/%{name}-*.egg-info
+
+
+%changelog
+* Sat Nov 06 2010 Funda Wang <fwang@mandriva.org> 3.2.1-2mdv2011.0
++ Revision: 593918
+- rebuild
+
+* Sat Sep 04 2010 Anssi Hannula <anssi@mandriva.org> 3.2.1-1mdv2011.0
++ Revision: 575898
+- initial Mandriva release
+
