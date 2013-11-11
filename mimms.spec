@@ -1,4 +1,4 @@
-
+%define debug_package          %{nil}
 %define name	mimms
 %define version	3.2.1
 %define rel	3
