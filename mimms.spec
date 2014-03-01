@@ -1,21 +1,16 @@
-%define debug_package          %{nil}
-%define name	mimms
-%define version	3.2.1
-%define rel	3
-
 Summary:	MMS stream downloader
-Name:		%{name}
-Version:	%{version}
-Release:	%rel
+Name:		mimms
+Version:	3.2.1
+Release:	3
 URL:		http://nongnu.org/mimms/
-Source:		http://download.savannah.gnu.org/releases/mimms/%name-%version.tar.bz2
+Source:		http://download.savannah.gnu.org/releases/mimms/%{name}-%{version}.tar.bz2
 License:	GPLv3+
 Group:		Video
-BuildRoot:	%{_tmppath}/%{name}-root
 # not noarch due to arch-specific requirement on libmms0
 # BuildArch:	noarch
-BuildRequires:	python-devel
 Requires:	python-%{name}
+
+%define debug_package %{nil}
 
 %description
 mimms is a program designed to allow you to download streams using
@@ -27,6 +22,7 @@ easy to use and, for the time being, remains a useful program.
 %package -n python-%{name}
 Summary:	MMS stream module for Python
 Group:		System/Libraries
+%py_requires -d
 # used from pure python code, not linked against
 Requires:	%{_lib}mms0
 
@@ -41,31 +37,14 @@ Python module for handling of MMS streams, based on libmms.
 python setup.py build
 
 %install
-rm -rf %{buildroot}
 python setup.py install --root=%{buildroot}
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc AUTHORS NEWS README
 %{_bindir}/%{name}
 %{_mandir}/man1/%{name}.1*
 
 %files -n python-%{name}
-%defattr(-,root,root)
 %doc AUTHORS
 %{python_sitelib}/lib%{name}
 %{python_sitelib}/%{name}-*.egg-info
-
-
-%changelog
-* Sat Nov 06 2010 Funda Wang <fwang@mandriva.org> 3.2.1-2mdv2011.0
-+ Revision: 593918
-- rebuild
-
-* Sat Sep 04 2010 Anssi Hannula <anssi@mandriva.org> 3.2.1-1mdv2011.0
-+ Revision: 575898
-- initial Mandriva release
-
