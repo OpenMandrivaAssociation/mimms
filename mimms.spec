@@ -1,7 +1,7 @@
 Summary:	MMS stream downloader
 Name:		mimms
 Version:	3.2.1
-Release:	3
+Release:	4
 URL:		http://nongnu.org/mimms/
 Source:		http://download.savannah.gnu.org/releases/mimms/%{name}-%{version}.tar.bz2
 License:	GPLv3+
